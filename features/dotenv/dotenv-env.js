@@ -6,11 +6,11 @@ var inquirer = require('inquirer'),
     fs = require('fs'),
     async = require('async');
 
-module.exports = function(allonsy, commander, callback) {
+module.exports = ['$allonsy', '$done', function($allonsy, $done) {
 
-  allonsy.logBanner('Configure your Allons-y! platform environment:\n');
+  $allonsy.logBanner('Configure your Allons-y! platform environment:\n');
 
-  var envFiles = allonsy.findInFeaturesSync('*-env.json'),
+  var envFiles = $allonsy.findInFeaturesSync('*-env.json'),
       envFile = path.resolve(__dirname, '../../../../.env'),
       env = {};
 
@@ -48,8 +48,8 @@ module.exports = function(allonsy, commander, callback) {
       return key + '=' + env[key];
     }).join('\n'));
 
-    allonsy.logTitle('Your platform environment is ready!');
+    $allonsy.logTitle('Your platform environment is ready!');
   });
 
-  callback();
-};
+  $done();
+}];
