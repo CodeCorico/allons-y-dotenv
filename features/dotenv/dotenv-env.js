@@ -1,14 +1,14 @@
 'use strict';
 
 module.exports = function($allonsy, $done) {
-var inquirer = require('inquirer'),
-    dotenv = require('dotenv'),
-    path = require('path'),
-    fs = require('fs'),
-    async = require('async');
 
+  var inquirer = require('inquirer'),
+      dotenv = require('dotenv'),
+      path = require('path'),
+      fs = require('fs'),
+      async = require('async');
 
-  $allonsy.logBanner('Configure your Allons-y! platform environment:\n');
+  $allonsy.logBanner('Configure your Allons-y environment:\n');
 
   var envFiles = $allonsy.findInFeaturesSync('*-env.json'),
       envFile = path.resolve(__dirname, '../../../../.env'),
@@ -48,7 +48,7 @@ var inquirer = require('inquirer'),
       return key + '=' + env[key];
     }).join('\n'));
 
-    $allonsy.logTitle('Your platform environment is ready!');
+    $allonsy.logSuccess('\n  Your environment is ready!\n\n');
   });
 
   $done();

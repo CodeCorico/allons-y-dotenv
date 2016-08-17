@@ -11,5 +11,10 @@ module.exports = {
       ],
       command: require(path.resolve(__dirname, 'dotenv-env.js'))
     }
-  }
+  },
+  liveCommands: [{
+    commands: 'env',
+    description: 'output the custom environment variables',
+    action: require(path.resolve(__dirname, 'dotenv-live-commands.js'))
+  }]
 };
