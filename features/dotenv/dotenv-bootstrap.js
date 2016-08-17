@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = ['$done', function($done) {
+module.exports = function($done) {
   var fs = require('fs'),
       dotenv = require('dotenv');
 
@@ -11,4 +11,4 @@ module.exports = ['$done', function($done) {
   dotenv.load();
 
   $done();
-}];
+};

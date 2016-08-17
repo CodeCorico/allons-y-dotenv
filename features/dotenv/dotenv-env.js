@@ -1,12 +1,12 @@
 'use strict';
 
+module.exports = function($allonsy, $done) {
 var inquirer = require('inquirer'),
     dotenv = require('dotenv'),
     path = require('path'),
     fs = require('fs'),
     async = require('async');
 
-module.exports = ['$allonsy', '$done', function($allonsy, $done) {
 
   $allonsy.logBanner('Configure your Allons-y! platform environment:\n');
 
@@ -52,4 +52,4 @@ module.exports = ['$allonsy', '$done', function($allonsy, $done) {
   });
 
   $done();
-}];
+};
