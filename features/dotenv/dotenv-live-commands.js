@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function($allonsy) {
-  $allonsy.logInfo('\n► env:\n\n');
+  $allonsy.outputInfo('\n► env:\n\n');
 
   var dotenv = require('dotenv'),
       path = require('path'),

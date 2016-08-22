@@ -8,7 +8,7 @@ module.exports = function($allonsy, $done) {
       fs = require('fs'),
       async = require('async');
 
-  $allonsy.logBanner('Configure your Allons-y environment:\n');
+  $allonsy.outputBanner('Configure your Allons-y environment:\n');
 
   var envFiles = $allonsy.findInFeaturesSync('*-env.json'),
       envFile = path.resolve(__dirname, '../../../../.env'),
@@ -48,8 +48,9 @@ module.exports = function($allonsy, $done) {
       return key + '=' + env[key];
     }).join('\n'));
 
-    $allonsy.logSuccess('\n  Your environment is ready!\n\n');
+    $allonsy.outputSuccess('\n  Your environment is ready!\n\n');
+
+    $done();
   });
 
-  $done();
 };
