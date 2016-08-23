@@ -9,7 +9,7 @@ module.exports = {
       help: [
         ['env', 'configure your local platform environment']
       ],
-      command: require(path.resolve(__dirname, 'dotenv-env.js'))
+      command: require(path.resolve(__dirname, 'dotenv-command.js'))
     }
   },
   liveCommands: [{
