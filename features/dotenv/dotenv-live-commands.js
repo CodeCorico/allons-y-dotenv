@@ -5,9 +5,8 @@ module.exports = function($allonsy) {
 
   var dotenv = require('dotenv'),
       path = require('path'),
-      fs = require('fs');
-
-  var envFile = path.resolve(__dirname, '../../../../.env'),
+      fs = require('fs'),
+      envFile = path.resolve('.env'),
       env = dotenv.parse(fs.readFileSync(envFile)),
       maxWidth = 0;
 
