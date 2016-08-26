@@ -147,9 +147,12 @@ module.exports = function($allonsy, $done) {
     _prompt(envConfig.env, nextFile);
 
   }, function() {
-    fs.writeFileSync(envFile, Object.keys(env).map(function(key) {
-      return key + '=' + env[key];
-    }).join('\n'));
+    fs.writeFileSync(envFile,
+      '# Ignore this file in your repository\n\n' +
+      Object.keys(env).map(function(key) {
+        return key + '=' + env[key];
+      }).join('\n')
+    );
 
     $allonsy.outputSuccess('\n  Your environment is ready!\n\n');
 
