@@ -41,6 +41,10 @@ module.exports = function($allonsy, $done) {
 
       whens = whens
         .map(function(when) {
+          if (typeof when == 'function') {
+            return when;
+          }
+
           when = when.split('=');
 
           if (when.length > 1) {
@@ -67,6 +71,17 @@ module.exports = function($allonsy, $done) {
 
           for (var i = 0; i < whens.length; i++) {
             var when = whens[i];
+
+            if (typeof when == 'function') {
+              if (when(inputs)) {
+                trues++;
+              }
+              else {
+                return false;
+              }
+
+              continue;
+            }
 
             for (var j = 0; j < keys.length; j++) {
               var key = keys[j];
