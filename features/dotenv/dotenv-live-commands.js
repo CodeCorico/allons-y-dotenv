@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function($allonsy) {
-  $allonsy.outputInfo('\n► env:\n\n');
+  $allonsy.outputInfo('\n► env:\n');
 
   var dotenv = require('dotenv'),
       path = require('path'),
@@ -15,8 +15,6 @@ module.exports = function($allonsy) {
   });
 
   Object.keys(env).forEach(function(key) {
-    console.log('  ' + key + (key.length < maxWidth ? Array(maxWidth - key.length + 1).join(' ') : '') + ' = ' + process.env[key]);
+    $allonsy.output('  ' + key + (key.length < maxWidth ? Array(maxWidth - key.length + 1).join(' ') : '') + ' = ' + process.env[key], '\n');
   });
-
-  console.log('');
 };
