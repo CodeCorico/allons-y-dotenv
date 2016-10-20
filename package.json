@@ -1,26 +1,24 @@
 {
   "name": "allons-y-dotenv",
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "Interact with the dotenv module.",
+  "license": "MIT",
+  "homepage": "http://allons-y.io",
+  "author": "CodeCorico <hello@codecorico.com>",
+  "bugs": "https://github.com/CodeCorico/allons-y-dotenv/issues",
   "repository": {
     "type": "git",
     "url": "https://github.com/CodeCorico/allons-y-dotenv.git"
-  },
-  "author": "CodeCorico <hello@codecorico.com>",
-  "bugs": {
-    "url": "https://github.com/CodeCorico/allons-y-dotenv/issues"
-  },
-  "homepage": "https://github.com/CodeCorico/allons-y-dotenv",
-  "dependencies": {
-    "async": "^2.0.1",
-    "dotenv": "^2.0.0",
-    "extend": "^3.0.0",
-    "inquirer": "^1.1.2"
   },
   "engines": {
     "node": ">=4.1",
     "npm": ">=3.2"
   },
-  "license": "MIT"
+  "dependencies": {
+    "allons-y": "^1.0.0",
+    "async": "^2.0.1",
+    "dotenv": "^2.0.0",
+    "extend": "^3.0.0",
+    "inquirer": "^1.1.2"
+  }
 }
